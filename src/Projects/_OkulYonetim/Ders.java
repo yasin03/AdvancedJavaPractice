@@ -10,6 +10,10 @@ public class Ders {
     private Ogretmen dersOgretmen;
     private double sozluNot;
     private double yaziliNot;
+    private double ortalama;
+    private boolean gectiMi;
+
+
 
     public void Ders() {
 
@@ -20,6 +24,10 @@ public class Ders {
     public void yazdirOgretmen() {
 
     }
+    private double ortalamaBul(double sozluNot, double yaziliNot) {
+        double ort = (sozluNot*0.20)+(yaziliNot*0.8);
+        return ort;
+    }
 
     public Ders(String dersAdi, String dersKodu, Ogretmen dersOgretmen, double sozluNot, double yaziliNot) {
         this.dersAdi = dersAdi;
@@ -27,18 +35,33 @@ public class Ders {
         this.dersOgretmen = dersOgretmen;
         this.sozluNot = sozluNot;
         this.yaziliNot = yaziliNot;
+        this.ortalama=ortalamaBul(sozluNot, yaziliNot);
+        this.gectiMi = gectiMi();
+    }
+    private boolean gectiMi() {
+        boolean result = false;
+        if (ortalama>50) {
+            result = true;
+        }
+        return result;
     }
 
-    @Override
-    public String toString() {
-        return "Ders{" +
-                "dersAdi='" + dersAdi + '\'' +
-                ", dersKodu='" + dersKodu + '\'' +
-                ", dersOgretmen='" + dersOgretmen + '\'' +
-                ", sozluNot=" + sozluNot +
-                ", yaziliNot=" + yaziliNot +
-                '}';
+    public boolean isGectiMi() {
+        return gectiMi;
     }
+
+    public void setGectiMi(boolean gectiMi) {
+        this.gectiMi = gectiMi;
+    }
+
+    public double getOrtalama() {
+        return ortalama;
+    }
+
+    public void setOrtalama(double ortalama) {
+        this.ortalama = ortalama;
+    }
+
 
     public String getDersAdi() {
         return dersAdi;
@@ -78,5 +101,15 @@ public class Ders {
 
     public void setYaziliNot(double yaziliNot) {
         this.yaziliNot = yaziliNot;
+    }
+    @Override
+    public String toString() {
+        return "Ders{" +
+                "dersAdi='" + dersAdi + '\'' +
+                ", dersKodu='" + dersKodu + '\'' +
+                ", dersOgretmen='" + dersOgretmen + '\'' +
+                ", sozluNot=" + sozluNot +
+                ", yaziliNot=" + yaziliNot +
+                '}';
     }
 }

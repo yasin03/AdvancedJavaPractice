@@ -13,6 +13,20 @@ public class Q16 {
         */
 
 
+        int sayi = 5;
+
+        System.out.println("* ");
+        for (int i = 0; i < sayi; i++) {
+            System.out.print("* ");
+
+                for (int j = 0; j < i; j++) {
+                    System.out.print("  ");
+                }
+            System.out.println("* ");
+        }
+        for (int i = 0; i < sayi; i++) {
+            System.out.print("*  ");
+        }
 
     }
 
