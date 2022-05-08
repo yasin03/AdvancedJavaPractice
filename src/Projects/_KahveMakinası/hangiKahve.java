@@ -154,7 +154,7 @@ public class hangiKahve {
                 }
             }
             System.out.println("\nKahveniz Hazır. Afiyet Olsun.");
-        }  else {
+        } else {
             System.out.println("Hatalı giriş yaptınız tekrar deneyiniz : ");
             kahveCikis();
         }

@@ -1,22 +1,22 @@
-package _15_Exceptions.Q02;
+package Projects._AracKiralama;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Ogrenci {
+public class MusteriBilgileri {
 
     private String ad;
     private String soyad;
-    private Integer yas;
-    // public static List<String> ogrenciList=new ArrayList<>();
+    private String tel;
+    private int yas;
+    private String tc;
 
-    public Ogrenci() {
+    public MusteriBilgileri(){
+
     }
-
-    public Ogrenci(String ad, String soyad, int yas) {
+    public MusteriBilgileri(String ad, String soyad, String tel, int yas, String tc) {
         this.ad = ad;
         this.soyad = soyad;
+        this.tel = tel;
         this.yas = yas;
+        this.tc = tc;
     }
 
     public String getAd() {
@@ -35,6 +35,14 @@ public class Ogrenci {
         this.soyad = soyad;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
     public int getYas() {
         return yas;
     }
@@ -43,12 +51,22 @@ public class Ogrenci {
         this.yas = yas;
     }
 
+    public String getTc() {
+        return tc;
+    }
+
+    public void setTc(String tc) {
+        this.tc = tc;
+    }
+
     @Override
     public String toString() {
-        return "Ogrenci{" +
+        return "MusteriBilgileri{" +
                 "ad='" + ad + '\'' +
                 ", soyad='" + soyad + '\'' +
+                ", tel='" + tel + '\'' +
                 ", yas=" + yas +
+                ", tc='" + tc + '\'' +
                 '}';
     }
 }
